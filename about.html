@@ -6,5 +6,47 @@
 </head>
 <body>
 
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    $(function){
+
+        var url = "https://cataas.com/cat"+/cat
+        // console.log(url); //for debug
+        $.ajax({
+            url: url,
+            dataType: "GET",
+            type: "post",
+            data:data,
+            //Type: Function(Anything data, String textStatus, jqXHR jqXHR)
+            success: function(data, textStatus, jqXHR) {
+                console.log(JSON.stringify(data));
+            },
+            //Type: Function(jqXHR jqXHR, String textStatus, String errorThrown)
+            error: function(jqXHR, textStatus, errorThrown) {
+
+            }
+        });
+
+        callAPI("cat");
+        curl -X 'GET' \
+  'https://cataas.com/cat' \
+  -H 'accept: */*'
+
+
+    });
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
 </body>
 </html>
