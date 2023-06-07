@@ -6,20 +6,38 @@
 </head>
 <body>
 
+<img src="" id="cat_img"/>
 <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
 <script type="text/javascript">
-    $(function){
+    $(function (){
+        console.log("hi");
+        callGetAPI()
 
-        var url = "https://cataas.com/cat"+/cat
+    });
+
+    function callGetAPI(){
+        var data ={
+            "_id": "rV1MVEh0Af2Bm4O0",
+            "tags": [
+                "kitten",
+                "several",
+                "gif"
+            ],
+            "owner": "null",
+            "createdAt": "Sun May 01 2022 20:57:11 GMT+0000 (Coordinated Universal Time)",
+            "updatedAt": "Tue Oct 11 2022 07:52:32 GMT+0000 (Coordinated Universal Time)"
+        }
+        var url = "https://cataas.com/cat?json=true"
         // console.log(url); //for debug
         $.ajax({
             url: url,
-            dataType: "GET",
-            type: "post",
+            //ataType: "json",
+            type: "get",
             data:data,
             //Type: Function(Anything data, String textStatus, jqXHR jqXHR)
             success: function(data, textStatus, jqXHR) {
                 console.log(JSON.stringify(data));
+                $("#cat_img").attr('src','https://cataas.com/'+data.url);
             },
             //Type: Function(jqXHR jqXHR, String textStatus, String errorThrown)
             error: function(jqXHR, textStatus, errorThrown) {
@@ -27,16 +45,7 @@
             }
         });
 
-        callAPI("cat");
-        curl -X 'GET' \
-  'https://cataas.com/cat' \
-  -H 'accept: */*'
-
-
-    });
-
-
-
+    }
 
 
 
@@ -50,3 +59,4 @@
 
 </body>
 </html>
+
